@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Flex, Icon } from '@chakra-ui/core'
+import { Text, Flex } from '@chakra-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'

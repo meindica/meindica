@@ -1,3 +1,7 @@
+require('dotenv/config')
+
+console.log(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS)
+
 module.exports = {
   siteMetadata: {
     title: `Me Indica!`,
@@ -5,6 +9,16 @@ module.exports = {
     author: `@ritalinux`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-google-spreadsheet',
+      options: {
+        spreadsheetId: process.env.SPREADSHEET_ID,
+        credentials: {
+          private_key: process.env.GOOGLE_PRIVATE_KEY,
+          client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        },
+      },
+    },
     'gatsby-plugin-chakra-ui',
     `gatsby-plugin-react-helmet`,
     {
