@@ -78,7 +78,16 @@ const IndexPage = () => {
       <List>
         {results.length > 0 &&
           results.map(
-            ({ id, name, locale, senority, stack, working, realocate }) => (
+            ({
+              id,
+              name,
+              locale,
+              senority,
+              stack,
+              working,
+              realocate,
+              linkedin,
+            }) => (
               <Card
                 key={id}
                 name={name}
@@ -87,13 +96,23 @@ const IndexPage = () => {
                 stack={stack}
                 working={working}
                 realocate={realocate}
+                linkedin={linkedin}
               />
             )
           )}
 
         {results.length <= 0 &&
           persons.map(
-            ({ id, name, locale, senority, stack, working, realocate }) => (
+            ({
+              id,
+              name,
+              locale,
+              senority,
+              stack,
+              working,
+              realocate,
+              linkedin,
+            }) => (
               <Card
                 key={id}
                 name={name}
@@ -102,6 +121,7 @@ const IndexPage = () => {
                 stack={stack}
                 working={working}
                 realocate={realocate}
+                linkedin={linkedin}
               />
             )
           )}

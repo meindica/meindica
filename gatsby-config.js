@@ -8,8 +8,6 @@ const credentials = {
   client_email: process.env.GOOGLE_CLIENT_EMAIL,
 }
 
-console.log(credentials)
-
 module.exports = {
   siteMetadata: {
     title: `Me Indica!`,
