@@ -1,4 +1,6 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { transformResults } from '../transformers/results'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -8,27 +10,53 @@ import { List } from '../components/list'
 import { Card } from '../components/card'
 import { Search } from '../components/search'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO />
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query fetchPersons {
+      persons: allGoogleSpreadsheetRepostasAoFormulario {
+        edges {
+          node {
+            id
+            cidade_estadoQueVoc_Mora_
+            consideraSeMudarCasoAVagaSejaForaDaSuaCidade_
+            nomeESobrenome_
+            senioridadeDaVagaQueVoc_Busca_
+            urlDoSeuLinkedIn_
+            vagaDeTecnologiaQueVoc_T_Procurando_
+            voc_Est_SemEmpregoAtualmente_
+          }
+        }
+      }
+    }
+  `)
 
-    <Logo />
-    <TextAbout />
-    <Search />
+  const persons = data.persons.edges.map(transformResults)
 
-    <List>
-      {[1, 2, 3, 4, 5].map(i => (
-        <Card
-          key={i}
-          name="Wallace Oliveira"
-          locale="Maringá/PR"
-          senority="Junior, Pleno"
-          stack="Front-end, React"
-          working
-        />
-      ))}
-    </List>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO />
+
+      <Logo />
+      <TextAbout />
+      <Search criteria={['estágio', 'pleno']} />
+
+      <List>
+        {persons.map(
+          ({ id, name, locale, senority, stack, working, realocate }) => (
+            <Card
+              key={id}
+              name={name}
+              locale={locale}
+              senority={senority}
+              stack={stack}
+              working={working}
+              realocate={realocate}
+            />
+          )
+        )}
+      </List>
+    </Layout>
+  )
+}
 
 export default IndexPage
