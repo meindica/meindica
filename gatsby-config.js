@@ -10,6 +10,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-source-google-spreadsheet',
       options: {
         spreadsheetId: process.env.SPREADSHEET_ID,
