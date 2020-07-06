@@ -1,7 +1,7 @@
 import React from 'react'
-import { Input, Box, Tag, TagCloseButton, Stack } from '@chakra-ui/core'
+import { Input, Box } from '@chakra-ui/core'
 
-export function Search({ criteria, ...props }) {
+export function Search({ onChange, value, ...props }) {
   return (
     <Box {...props}>
       <Input
@@ -10,22 +10,13 @@ export function Search({ criteria, ...props }) {
         color="pink.400"
         size="lg"
         variant="filled"
+        value={value}
+        onChange={onChange}
         _focus={{
           color: 'pink.400',
           borderColor: 'pink.200',
         }}
       />
-
-      {criteria.length > 0 && (
-        <Stack mt={4} spacing={4} isInline>
-          {criteria.map(i => (
-            <Tag rounded="full" variantColor="pink">
-              {i}
-              <TagCloseButton />
-            </Tag>
-          ))}
-        </Stack>
-      )}
     </Box>
   )
 }

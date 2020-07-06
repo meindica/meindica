@@ -11,7 +11,7 @@ export function Card({ name, locale, senority, stack, working, realocate }) {
 
       <Stack spacing={2}>
         <Text>{senority}</Text>
-        <Text>Stack: {stack}</Text>
+        <Text>{stack}</Text>
         <Text>Trabalhando: {working ? 'Sim' : 'Não'}</Text>
         <Text>Disponível para mudança: {realocate ? 'Sim' : 'Não'}</Text>
       </Stack>
