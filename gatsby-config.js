@@ -1,6 +1,14 @@
 require('dotenv/config')
 
-console.log(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS)
+const credentials = {
+  private_key: process.env.GOOGLE_PRIVATE_KEY.replace(
+    new RegExp('\\\\n', 'g'),
+    '\n'
+  ),
+  client_email: process.env.GOOGLE_CLIENT_EMAIL,
+}
+
+console.log(credentials)
 
 module.exports = {
   siteMetadata: {
@@ -21,10 +29,7 @@ module.exports = {
       resolve: 'gatsby-source-google-spreadsheet',
       options: {
         spreadsheetId: process.env.SPREADSHEET_ID,
-        credentials: {
-          private_key: process.env.GOOGLE_PRIVATE_KEY,
-          client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        },
+        credentials: credentials,
       },
     },
     'gatsby-plugin-chakra-ui',
