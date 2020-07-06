@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Text, Stack } from '@chakra-ui/core'
 
-export function Card({ name, locale, senority, stack, working }) {
+export function Card({ name, locale, senority, stack, working, realocate }) {
   return (
-    <Box backgroundColor="purple.200" p={4} borderRadius="8px">
+    <Box backgroundColor="pink.200" p={4} borderRadius="8px">
       <Text as="h2" fontWeight="bold" fontSize="lg">
         {name}
       </Text>
@@ -12,11 +12,8 @@ export function Card({ name, locale, senority, stack, working }) {
       <Stack spacing={2}>
         <Text>{senority}</Text>
         <Text>Stack: {stack}</Text>
-        <Text color="gray.700">
-          {working
-            ? 'Está empregado no momento'
-            : 'Não está trabalhando no momento'}
-        </Text>
+        <Text>Trabalhando: {working ? 'Sim' : 'Não'}</Text>
+        <Text>Disponível para mudança: {realocate ? 'Sim' : 'Não'}</Text>
       </Stack>
     </Box>
   )
