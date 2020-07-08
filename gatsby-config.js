@@ -24,11 +24,12 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-google-spreadsheet',
+      resolve: 'gatsby-source-google-sheets',
       options: {
         spreadsheetId: process.env.SPREADSHEET_ID,
-        credentials: credentials,
-      },
+        worksheetTitle: 'Respostas ao formulário 1',
+        credentials,
+      }
     },
     'gatsby-plugin-chakra-ui',
     `gatsby-plugin-react-helmet`,

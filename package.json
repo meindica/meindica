@@ -19,7 +19,7 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.14",
     "gatsby-source-filesystem": "^2.3.14",
-    "gatsby-source-google-spreadsheet": "^2.0.0",
+    "gatsby-source-google-sheets": "^1.1.1",
     "gatsby-transformer-sharp": "^2.5.7",
     "js-search": "^2.0.0",
     "prop-types": "^15.7.2",

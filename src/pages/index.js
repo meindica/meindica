@@ -30,17 +30,17 @@ function buildIndexes(data) {
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query fetchPersons {
-      persons: allGoogleSpreadsheetRepostasAoFormulario {
+      persons: allGoogleSheetRespostasAoFormulario1Row {
         edges {
           node {
             id
-            cidade_estadoQueVoc_Mora_
-            consideraSeMudarCasoAVagaSejaForaDaSuaCidade_
-            nomeESobrenome_
-            senioridadeDaVagaQueVoc_Busca_
-            urlDoSeuLinkedIn_
-            vagaDeTecnologiaQueVoc_T_Procurando_
-            voc_Est_SemEmpregoAtualmente_
+            nomeesobrenome
+            urldoseulinkedin
+            vagadetecnologiaquevocetaprocurando
+            senioridadedavagaquevocebusca
+            cidadeestadoquevocemora
+            considerasemudarcasoavagasejaforadasuacidade
+            voceestasemempregoatualmente
           }
         }
       }
