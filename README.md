@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
   <a href="https://meindica.tech">
@@ -24,6 +24,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/ritalino"><img src="https://avatars2.githubusercontent.com/u/30784544?v=4" width="100px;" alt=""/><br /><sub><b>Rita Lino</b></sub></a><br /><a href="https://github.com/uselessdev/meindica/commits?author=ritalino" title="Code">💻</a> <a href="#ideas-ritalino" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://iamwallace.dev"><img src="https://avatars2.githubusercontent.com/u/6943919?v=4" width="100px;" alt=""/><br /><sub><b>Wallace Batista</b></sub></a><br /><a href="https://github.com/uselessdev/meindica/commits?author=uselessdev" title="Code">💻</a></td>
   </tr>
 </table>
 
