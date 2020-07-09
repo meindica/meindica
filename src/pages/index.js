@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { transformResults } from '../transformers/results'
 import * as JSSearch from 'js-search'
+import { useColorMode, Flex, Switch } from '@chakra-ui/core'
+import { transformResults } from '../transformers/results'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -52,6 +53,8 @@ const IndexPage = () => {
   const [results, setResults] = useState([])
   const [engine] = useState(buildIndexes(all))
 
+  const { colorMode, toggleColorMode } = useColorMode()
+
   useEffect(() => {
     if (criteria.length > 0) {
       const results = engine.search(criteria.trim())
@@ -73,7 +76,17 @@ const IndexPage = () => {
     <Layout>
       <SEO />
 
-      <Logo />
+      <Flex align="flex-end" justify="space-between">
+        <Logo />
+        <Switch
+          onChange={toggleColorMode}
+          color="cyan"
+          size="lg"
+          isChecked={colorMode === 'light'}
+          title={`Alternar para modo ${colorMode === 'light' ? 'escuro' : 'claro'}`}
+        />
+      </Flex>
+
       <TextAbout />
       <Search onChange={handleCriteriaChange} value={criteria} />
 
