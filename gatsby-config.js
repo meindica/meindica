@@ -33,7 +33,7 @@ module.exports = {
       resolve: 'gatsby-source-google-sheets',
       options: {
         spreadsheetId: process.env.SPREADSHEET_ID,
-        worksheetTitle: 'Respostas ao formulário 1',
+        worksheetTitle: process.env.WORKSHEET,
         credentials,
       }
     },

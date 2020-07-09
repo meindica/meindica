@@ -1,7 +1,11 @@
 import React from 'react'
-import { Box, Text, Link } from '@chakra-ui/core'
+import { Box, Text, Link, useColorMode } from '@chakra-ui/core'
 
 export function TextAbout(props) {
+  const { colorMode } = useColorMode()
+
+  const isLightMode = colorMode === 'light'
+
   return (
     <Box {...props}>
       <Text fontSize={['base', '2xl']} color="pink.400">
@@ -14,12 +18,15 @@ export function TextAbout(props) {
         <Link
           href="https://forms.gle/h1QbQVXxdxLmMkmR6"
           isExternal
-          _hover={{ textDecoration: 'none', color: 'gray.50', outline: 'none' }}
+          _hover={{
+            textDecoration: 'none',
+            color: isLightMode ? 'blue.600' : 'gray.50',
+            outline: 'none',
+          }}
         >
           {' '}
-          Clique aqui para preencher o formulário
+          Clique aqui para preencher o formulário!
         </Link>
-        !
       </Text>
     </Box>
   )

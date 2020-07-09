@@ -5,6 +5,6 @@ export const transformResults = ({ node }) => ({
   senority: node.senioridadedavagaquevocebusca,
   linkedin: node.urldoseulinkedin,
   stack: node.vagadetecnologiaquevocetaprocurando,
-  working: !/sim/i.test(node.voceestasemempregoatualmente),
-  realocate: /sim/i.test(node.considerasemudarcasoavagasejaforadasuacidade),
+  working: node.voceestasemempregoatualmente,
+  realocate: node.considerasemudarcasoavagasejaforadasuacidade,
 })

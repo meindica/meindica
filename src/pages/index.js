@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { transformResults } from '../transformers/results'
 import * as JSSearch from 'js-search'
+import { useColorMode, Flex, Switch } from '@chakra-ui/core'
+import { transformResults } from '../transformers/results'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -46,11 +47,13 @@ const IndexPage = () => {
       }
     }
   `)
-  const persons = data.persons.edges.map(transformResults)
+  const all = data.persons.edges.map(transformResults)
 
   const [criteria, setCriteria] = useState('')
   const [results, setResults] = useState([])
-  const [engine] = useState(buildIndexes(persons))
+  const [engine] = useState(buildIndexes(all))
+
+  const { colorMode, toggleColorMode } = useColorMode()
 
   useEffect(() => {
     if (criteria.length > 0) {
@@ -67,64 +70,28 @@ const IndexPage = () => {
     setCriteria(target.value)
   }
 
+  const persons = results.length > 0 ? results : all
+
   return (
     <Layout>
       <SEO />
 
-      <Logo />
+      <Flex align="flex-end" justify="space-between">
+        <Logo />
+        <Switch
+          onChange={toggleColorMode}
+          color="cyan"
+          size="lg"
+          isChecked={colorMode === 'light'}
+          title={`Alternar para modo ${colorMode === 'light' ? 'escuro' : 'claro'}`}
+        />
+      </Flex>
+
       <TextAbout />
       <Search onChange={handleCriteriaChange} value={criteria} />
 
       <List>
-        {results.length > 0 &&
-          results.map(
-            ({
-              id,
-              name,
-              locale,
-              senority,
-              stack,
-              working,
-              realocate,
-              linkedin,
-            }) => (
-              <Card
-                key={id}
-                name={name}
-                locale={locale}
-                senority={senority}
-                stack={stack}
-                working={working}
-                realocate={realocate}
-                linkedin={linkedin}
-              />
-            )
-          )}
-
-        {results.length <= 0 &&
-          persons.map(
-            ({
-              id,
-              name,
-              locale,
-              senority,
-              stack,
-              working,
-              realocate,
-              linkedin,
-            }) => (
-              <Card
-                key={id}
-                name={name}
-                locale={locale}
-                senority={senority}
-                stack={stack}
-                working={working}
-                realocate={realocate}
-                linkedin={linkedin}
-              />
-            )
-          )}
+        {persons.map(person => <Card key={person.id} {...person} />)}
       </List>
     </Layout>
   )
