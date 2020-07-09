@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ritalino",
+      "name": "Rita Lino",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/30784544?v=4",
+      "profile": "https://github.com/ritalino",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "meindica",
+  "projectOwner": "uselessdev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
