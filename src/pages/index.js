@@ -46,11 +46,11 @@ const IndexPage = () => {
       }
     }
   `)
-  const persons = data.persons.edges.map(transformResults)
+  const all = data.persons.edges.map(transformResults)
 
   const [criteria, setCriteria] = useState('')
   const [results, setResults] = useState([])
-  const [engine] = useState(buildIndexes(persons))
+  const [engine] = useState(buildIndexes(all))
 
   useEffect(() => {
     if (criteria.length > 0) {
@@ -67,6 +67,8 @@ const IndexPage = () => {
     setCriteria(target.value)
   }
 
+  const persons = results.length > 0 ? results : all
+
   return (
     <Layout>
       <SEO />
@@ -76,55 +78,7 @@ const IndexPage = () => {
       <Search onChange={handleCriteriaChange} value={criteria} />
 
       <List>
-        {results.length > 0 &&
-          results.map(
-            ({
-              id,
-              name,
-              locale,
-              senority,
-              stack,
-              working,
-              realocate,
-              linkedin,
-            }) => (
-              <Card
-                key={id}
-                name={name}
-                locale={locale}
-                senority={senority}
-                stack={stack}
-                working={working}
-                realocate={realocate}
-                linkedin={linkedin}
-              />
-            )
-          )}
-
-        {results.length <= 0 &&
-          persons.map(
-            ({
-              id,
-              name,
-              locale,
-              senority,
-              stack,
-              working,
-              realocate,
-              linkedin,
-            }) => (
-              <Card
-                key={id}
-                name={name}
-                locale={locale}
-                senority={senority}
-                stack={stack}
-                working={working}
-                realocate={realocate}
-                linkedin={linkedin}
-              />
-            )
-          )}
+        {persons.map(person => <Card key={person.id} {...person} />)}
       </List>
     </Layout>
   )
