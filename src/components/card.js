@@ -13,16 +13,20 @@ export function Card({
   return (
     <Box backgroundColor="pink.200" p={4} borderRadius="8px">
       <Link href={linkedin} isExternal _hover={{ textDecoration: 'none' }}>
-        <Text as="h2" fontWeight="bold" fontSize="lg">
+        <Text color="blue.900" as="h2" fontWeight="bold" fontSize="lg">
           {name}
         </Text>
-        <Text mb={4}>{locale}</Text>
+        <Text color="blue.900" mb={4}>
+          {locale}
+        </Text>
 
         <Stack spacing={2}>
-          <Text>{senority}</Text>
-          <Text>{stack}</Text>
-          <Text>Trabalhando: {working ? 'Sim' : 'Não'}</Text>
-          <Text>Disponível para mudança: {realocate ? 'Sim' : 'Não'}</Text>
+          <Text color="blue.900">{senority}</Text>
+          <Text color="blue.900">{stack}</Text>
+          <Text color="blue.900">Trabalhando: {working ? 'Sim' : 'Não'}</Text>
+          <Text color="blue.900">
+            Disponível para mudança: {realocate ? 'Sim' : 'Não'}
+          </Text>
         </Stack>
       </Link>
     </Box>

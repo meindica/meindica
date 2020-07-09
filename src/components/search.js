@@ -5,7 +5,7 @@ export function Search({ onChange, value, ...props }) {
   return (
     <Box {...props}>
       <Input
-        placeholder="Procure por stack, cidade ou senoriedade"
+        placeholder="Procure por stack, cidade ou senioridade"
         borderRadius="50px"
         color="pink.400"
         size="lg"
