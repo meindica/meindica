@@ -23,9 +23,9 @@ export function Card({
         <Stack spacing={2}>
           <Text color="blue.900">{senority}</Text>
           <Text color="blue.900">{stack}</Text>
-          <Text color="blue.900">Trabalhando: {working ? 'Sim' : 'Não'}</Text>
+          <Text color="blue.900">Trabalhando: {working}</Text>
           <Text color="blue.900">
-            Disponível para mudança: {realocate ? 'Sim' : 'Não'}
+            Disponível para mudança: {realocate}
           </Text>
         </Stack>
       </Link>
