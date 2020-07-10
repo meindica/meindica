@@ -4,7 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
   <a href="https://meindica.tech">
-    <img alt="Me Indica!" src="https://github.com/uselessdev/meindica/blob/master/src/images/logo.svg" width="200" />
+    <img alt="Me Indica!" src="https://raw.githubusercontent.com/meindica/meindica/main/src/images/logo.svg" width="200" />
   </a>
 </p>
 
@@ -23,8 +23,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/ritalino"><img src="https://avatars2.githubusercontent.com/u/30784544?v=4" width="100px;" alt=""/><br /><sub><b>Rita Lino</b></sub></a><br /><a href="https://github.com/uselessdev/meindica/commits?author=ritalino" title="Code">💻</a> <a href="#ideas-ritalino" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://iamwallace.dev"><img src="https://avatars2.githubusercontent.com/u/6943919?v=4" width="100px;" alt=""/><br /><sub><b>Wallace Batista</b></sub></a><br /><a href="https://github.com/uselessdev/meindica/commits?author=uselessdev" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ritalino"><img src="https://avatars2.githubusercontent.com/u/30784544?v=4" width="100px;" alt=""/><br /><sub><b>Rita Lino</b></sub></a><br /><a href="https://github.com/meindica/meindica/commits?author=ritalino" title="Code">💻</a> <a href="#ideas-ritalino" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://iamwallace.dev"><img src="https://avatars2.githubusercontent.com/u/6943919?v=4" width="100px;" alt=""/><br /><sub><b>Wallace Batista</b></sub></a><br /><a href="https://github.com/meindica/meindica/commits?author=uselessdev" title="Code">💻</a></td>
   </tr>
 </table>
 
