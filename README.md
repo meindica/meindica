@@ -14,6 +14,8 @@
   </a>
 </p>
 
+MeIndica! is a website where you can find someone to mention for that tech job opportunity a recruiter offered to you but it's not of your interest. Let's give a hand for those who need it! 
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
