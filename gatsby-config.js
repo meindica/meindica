@@ -16,9 +16,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Roboto',
+            variants: ['300', '400', '700', '900'],
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-goatcounter',
       options: {
-        code: 'meindica'
+        code: 'meindica',
       },
     },
     {
@@ -35,7 +46,7 @@ module.exports = {
         spreadsheetId: process.env.SPREADSHEET_ID,
         worksheetTitle: process.env.WORKSHEET,
         credentials,
-      }
+      },
     },
     'gatsby-plugin-chakra-ui',
     `gatsby-plugin-react-helmet`,
