@@ -83,7 +83,9 @@ const IndexPage = () => {
           color="cyan"
           size="lg"
           isChecked={colorMode === 'light'}
-          title={`Alternar para modo ${colorMode === 'light' ? 'escuro' : 'claro'}`}
+          title={`Alternar para modo ${
+            colorMode === 'light' ? 'escuro' : 'claro'
+          }`}
         />
       </Flex>
 
@@ -91,7 +93,9 @@ const IndexPage = () => {
       <Search onChange={handleCriteriaChange} value={criteria} />
 
       <List>
-        {persons.map(person => <Card key={person.id} {...person} />)}
+        {persons.map(person => (
+          <Card key={person.id} {...person} />
+        ))}
       </List>
     </Layout>
   )
