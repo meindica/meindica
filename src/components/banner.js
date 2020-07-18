@@ -1,11 +1,30 @@
 import React from 'react'
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Flex, Stack, Text, Box } from '@chakra-ui/core'
 import { Logo } from './logo'
 import { Circle, Stripes } from './backgrounds'
 import { Button } from './button'
 import { Row } from './row'
-import { fetchBackgroundImages } from '../queries'
+
+const fetchBackgroundImages = graphql`
+  query {
+    circle: file(relativePath: { eq: "circle.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+
+    stripes: file(relativePath: { eq: "stripes.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 export function Banner() {
   const data = useStaticQuery(fetchBackgroundImages)
