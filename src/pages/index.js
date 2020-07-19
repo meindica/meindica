@@ -78,7 +78,7 @@ const IndexPage = () => {
 
       <Banner />
 
-      <Row py={8} px={4} direction="column" id="persons">
+      <Row py={32} px={4} direction="column" id="persons">
         <Stack spacing={8}>
           <Flex align="center" justify="space-between">
             <Search
