@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as JSSearch from 'js-search'
-import { useColorMode, Flex, Switch } from '@chakra-ui/core'
+import { useColorMode, Flex, Switch, Stack } from '@chakra-ui/core'
 import { transformResults } from '../transformers/results'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Logo } from '../components/logo'
-import { TextAbout } from '../components/text'
 import { List } from '../components/list'
 import { Card } from '../components/card'
 import { Search } from '../components/search'
+import { Banner } from '../components/banner'
+import { Row } from '../components/row'
 
 function buildIndexes(data) {
   const search = new JSSearch.Search('id')
@@ -76,27 +76,36 @@ const IndexPage = () => {
     <Layout>
       <SEO />
 
-      <Flex align="flex-end" justify="space-between">
-        <Logo />
-        <Switch
-          onChange={toggleColorMode}
-          color="cyan"
-          size="lg"
-          isChecked={colorMode === 'light'}
-          title={`Alternar para modo ${
-            colorMode === 'light' ? 'escuro' : 'claro'
-          }`}
-        />
-      </Flex>
+      <Banner />
 
-      <TextAbout />
-      <Search onChange={handleCriteriaChange} value={criteria} />
+      <Row py={8} px={4} direction="column" id="persons">
+        <Stack spacing={8}>
+          <Flex align="center" justify="space-between">
+            <Search
+              flex={1}
+              mr={4}
+              onChange={handleCriteriaChange}
+              value={criteria}
+            />
 
-      <List>
-        {persons.map(person => (
-          <Card key={person.id} {...person} />
-        ))}
-      </List>
+            <Switch
+              onChange={toggleColorMode}
+              color="cyan"
+              size="lg"
+              isChecked={colorMode === 'light'}
+              title={`Alternar para modo ${
+                colorMode === 'light' ? 'escuro' : 'claro'
+              }`}
+            />
+          </Flex>
+
+          <List>
+            {persons.map(person => (
+              <Card key={person.id} {...person} />
+            ))}
+          </List>
+        </Stack>
+      </Row>
     </Layout>
   )
 }

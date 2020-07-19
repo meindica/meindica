@@ -1,42 +1,40 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
+import { Button, Flex } from '@chakra-ui/core'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+export function Header() {
+  return (
+    <Flex
+      py={4}
+      direction="row"
+      w="100%"
+      maxW="1366px"
+      marginX="auto"
+      justifyContent="flex-end"
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+      <Button
+        variantColor="yellow"
+        mr={4}
+        color="blue.200"
+        borderRadius="15px"
+        borderWidth="2px"
+        borderColor="yellow.100"
+        _hover={{ color: 'yellow.100', backgroundColor: 'transparent' }}
+      >
+        Inscreva-se
+      </Button>
+      <Button
+        variant="outline"
+        borderColor="yellow.100"
+        borderWidth="2px"
+        color="yellow.100"
+        borderRadius="15px"
+        _hover={{
+          color: 'blue.200',
+          backgroundColor: 'yellow.100',
+        }}
+      >
+        Buscar pessoas
+      </Button>
+    </Flex>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

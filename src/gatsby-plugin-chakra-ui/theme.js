@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { theme } from '@chakra-ui/core'
 
-const { colors, fontSizes, fonts, icons } = theme
+const { colors, fonts, icons } = theme
 
 export default {
   ...theme,
@@ -14,22 +14,10 @@ export default {
     yellow: {
       100: '#FEDA84',
       200: '#FEE19D',
+      500: '#FEDA84',
     },
     white: '#ffffff',
     black: '#121212',
-  },
-  /* sizes are converted to rem using a 16px as base */
-  fontSizes: {
-    ...fontSizes,
-    'xs': '0.8rem',
-    'sm': '1rem',
-    'md': '1.1rem',
-    'lg': '1.2rem',
-    'xl': '1.3rem',
-    '2xl': '2.5rem',
-    '3xl': '2.6rem',
-    '4xl': '2.8rem',
-    '5xl': '3.1rem',
   },
   fonts: {
     ...fonts,

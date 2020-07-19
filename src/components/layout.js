@@ -5,16 +5,21 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 import React from 'react'
-import { Flex, Stack } from '@chakra-ui/core'
+import { Global, css } from '@emotion/core'
 import PropTypes from 'prop-types'
 
 const Layout = ({ children }) => {
   return (
-    <Flex py={[8, 16]} px={[4, 8]} maxW="1440px" marginX="auto">
-      <Stack spacing={[8, 16]} width="100%">
-        {children}
-      </Stack>
-    </Flex>
+    <>
+      <Global
+        styles={css`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}
+      />
+      <main>{children}</main>
+    </>
   )
 }
 
