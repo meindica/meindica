@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as JSSearch from 'js-search'
-import { useColorMode, Flex, Switch, Stack } from '@chakra-ui/core'
+import { useColorMode, Flex, Stack, IconButton } from '@chakra-ui/core'
 import { transformResults } from '../transformers/results'
 
 import Layout from '../components/layout'
@@ -81,26 +81,27 @@ const IndexPage = () => {
 
       <Row py={32} px={4} direction="column" id="persons">
         <Stack spacing={8}>
-          <Title>Buscar pessoas</Title>
-
-          <Flex align="center" justify="space-between">
-            <Search
-              flex={1}
-              mr={4}
-              onChange={handleCriteriaChange}
-              value={criteria}
-            />
-
-            <Switch
-              onChange={toggleColorMode}
-              color="cyan"
-              size="lg"
-              isChecked={colorMode === 'light'}
-              title={`Alternar para modo ${
-                colorMode === 'light' ? 'escuro' : 'claro'
-              }`}
+          <Flex
+            justifyContent="space-between"
+            alignItems={['flex-start', 'center']}
+          >
+            <Title>Buscar pessoas</Title>
+            <IconButton
+              icon={colorMode === 'light' ? 'moon' : 'sun'}
+              variant="outline"
+              onClick={toggleColorMode}
+              borderWidth="2px"
+              borderColor="blue.100"
+              borderRadius="10px"
+              color="blue.100"
+              _focus={{
+                color: 'pink.400',
+                borderColor: 'pink.200',
+              }}
             />
           </Flex>
+
+          <Search flex={1} onChange={handleCriteriaChange} value={criteria} />
 
           <List>
             {persons.map(person => (

@@ -12,7 +12,7 @@ export function Title({ children, ...props }) {
     <Text
       as="h2"
       color="blue.100"
-      fontSize="6xl"
+      fontSize={['5xl', '6xl']}
       fontWeight="bolder"
       lineHeight="1"
       textShadow={`-4px -4px 0 ${shadow}, -5px -5px 0 #696A99`}

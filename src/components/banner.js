@@ -77,6 +77,7 @@ export function Banner() {
               target="_blank"
               rel="noopener noreferer"
               mb={4}
+              rightIcon="arrow-forward"
             >
               Quero me inscrever
             </Button>
