@@ -11,6 +11,7 @@ import { Card } from '../components/card'
 import { Search } from '../components/search'
 import { Banner } from '../components/banner'
 import { Row } from '../components/row'
+import { Title } from '../components/title'
 
 function buildIndexes(data) {
   const search = new JSSearch.Search('id')
@@ -80,6 +81,8 @@ const IndexPage = () => {
 
       <Row py={32} px={4} direction="column" id="persons">
         <Stack spacing={8}>
+          <Title>Buscar pessoas</Title>
+
           <Flex align="center" justify="space-between">
             <Search
               flex={1}
