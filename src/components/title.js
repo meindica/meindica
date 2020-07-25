@@ -1,21 +1,18 @@
 import React from 'react'
-import { Text, useColorMode, useTheme } from '@chakra-ui/core'
+import { Text, useTheme } from '@chakra-ui/core'
 
 export function Title({ children, ...props }) {
-  const { colorMode } = useColorMode()
   const theme = useTheme()
-
-  const shadow =
-    colorMode === 'dark' ? theme.colors.gray[800] : theme.colors.white
 
   return (
     <Text
       as="h2"
-      color="blue.100"
+      color="transparent"
       fontSize={['5xl', '6xl']}
       fontWeight="bolder"
       lineHeight="1"
-      textShadow={`-4px -4px 0 ${shadow}, -5px -5px 0 #696A99`}
+      style={{ WebkitTextStroke: `2px ${theme.colors.blue[200]}` }}
+      textShadow={`5px 5px 0 ${theme.colors.blue[200]}`}
       {...props}
     >
       {children}
