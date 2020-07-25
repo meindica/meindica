@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as JSSearch from 'js-search'
-import { useColorMode, Flex, Switch } from '@chakra-ui/core'
+import { useColorMode, Flex, Stack, IconButton } from '@chakra-ui/core'
 import { transformResults } from '../transformers/results'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Logo } from '../components/logo'
-import { TextAbout } from '../components/text'
 import { List } from '../components/list'
 import { Card } from '../components/card'
 import { Search } from '../components/search'
+import { Banner } from '../components/banner'
+import { Row } from '../components/row'
+import { Title } from '../components/title'
 
 function buildIndexes(data) {
   const search = new JSSearch.Search('id')
@@ -28,13 +29,24 @@ function buildIndexes(data) {
   return search
 }
 
+function sortByDate(order, list) {
+  if (order === 'asc') {
+    return [...list].sort((a, b) => a.date.localeCompare(b.date))
+  }
+
+  return list
+}
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query fetchPersons {
-      persons: allGoogleSheetRespostasAoFormulario1Row {
+      persons: allGoogleSheetRespostasAoFormulario1Row(
+        sort: { fields: carimbodedatahora, order: DESC }
+      ) {
         edges {
           node {
             id
+            carimbodedatahora
             nomeesobrenome
             urldoseulinkedin
             vagadetecnologiaquevocetaprocurando
@@ -52,6 +64,7 @@ const IndexPage = () => {
   const [criteria, setCriteria] = useState('')
   const [results, setResults] = useState([])
   const [engine] = useState(buildIndexes(all))
+  const [sort, setSort] = useState(() => 'desc')
 
   const { colorMode, toggleColorMode } = useColorMode()
 
@@ -66,9 +79,8 @@ const IndexPage = () => {
     }
   }, [criteria]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleCriteriaChange = ({ target }) => {
-    setCriteria(target.value)
-  }
+  const handleCriteriaChange = ({ target }) => setCriteria(target.value)
+  const handleChangeSort = ({ target }) => setSort(target.value)
 
   const persons = results.length > 0 ? results : all
 
@@ -76,23 +88,45 @@ const IndexPage = () => {
     <Layout>
       <SEO />
 
-      <Flex align="flex-end" justify="space-between">
-        <Logo />
-        <Switch
-          onChange={toggleColorMode}
-          color="cyan"
-          size="lg"
-          isChecked={colorMode === 'light'}
-          title={`Alternar para modo ${colorMode === 'light' ? 'escuro' : 'claro'}`}
-        />
-      </Flex>
+      <Banner />
 
-      <TextAbout />
-      <Search onChange={handleCriteriaChange} value={criteria} />
+      <Row py={32} px={4} direction="column" id="persons">
+        <Stack spacing={8}>
+          <Flex
+            justifyContent="space-between"
+            alignItems={['flex-start', 'center']}
+          >
+            <Title>Buscar pessoas</Title>
+            <IconButton
+              icon={colorMode === 'light' ? 'moon' : 'sun'}
+              variant="outline"
+              onClick={toggleColorMode}
+              borderWidth="2px"
+              borderColor="blue.100"
+              borderRadius="10px"
+              color="blue.100"
+              _focus={{
+                color: 'pink.400',
+                borderColor: 'pink.200',
+              }}
+            />
+          </Flex>
 
-      <List>
-        {persons.map(person => <Card key={person.id} {...person} />)}
-      </List>
+          <Search
+            flex={1}
+            onChange={handleCriteriaChange}
+            onSortChange={handleChangeSort}
+            value={criteria}
+            sort={sort}
+          />
+
+          <List>
+            {sortByDate(sort, persons).map(person => (
+              <Card key={person.id} {...person} />
+            ))}
+          </List>
+        </Stack>
+      </Row>
     </Layout>
   )
 }
