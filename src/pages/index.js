@@ -80,7 +80,7 @@ const IndexPage = () => {
   }, [criteria]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleCriteriaChange = ({ target }) => setCriteria(target.value)
-  const handleChangeSort = ({ target }) => setSort(target.value)
+  const handleChangeSort = ({ target }) => setSort(() => target.value)
 
   const persons = results.length > 0 ? results : all
 
