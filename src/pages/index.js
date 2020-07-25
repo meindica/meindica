@@ -29,13 +29,24 @@ function buildIndexes(data) {
   return search
 }
 
+function sortByDate(order, list) {
+  if (order === 'asc') {
+    return [...list].sort((a, b) => a.date.localeCompare(b.date))
+  }
+
+  return list
+}
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query fetchPersons {
-      persons: allGoogleSheetRespostasAoFormulario1Row {
+      persons: allGoogleSheetRespostasAoFormulario1Row(
+        sort: { fields: carimbodedatahora, order: DESC }
+      ) {
         edges {
           node {
             id
+            carimbodedatahora
             nomeesobrenome
             urldoseulinkedin
             vagadetecnologiaquevocetaprocurando
@@ -53,6 +64,7 @@ const IndexPage = () => {
   const [criteria, setCriteria] = useState('')
   const [results, setResults] = useState([])
   const [engine] = useState(buildIndexes(all))
+  const [sort, setSort] = useState(() => 'desc')
 
   const { colorMode, toggleColorMode } = useColorMode()
 
@@ -67,9 +79,8 @@ const IndexPage = () => {
     }
   }, [criteria]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleCriteriaChange = ({ target }) => {
-    setCriteria(target.value)
-  }
+  const handleCriteriaChange = ({ target }) => setCriteria(target.value)
+  const handleChangeSort = ({ target }) => setSort(target.value)
 
   const persons = results.length > 0 ? results : all
 
@@ -101,10 +112,16 @@ const IndexPage = () => {
             />
           </Flex>
 
-          <Search flex={1} onChange={handleCriteriaChange} value={criteria} />
+          <Search
+            flex={1}
+            onChange={handleCriteriaChange}
+            onSortChange={handleChangeSort}
+            value={criteria}
+            sort={sort}
+          />
 
           <List>
-            {persons.map(person => (
+            {sortByDate(sort, persons).map(person => (
               <Card key={person.id} {...person} />
             ))}
           </List>
