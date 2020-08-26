@@ -33,12 +33,12 @@ cd meindica/
 git checkout -b add-sua-funcionalidade
 ```
 
-A partir daqui você vai iniciar a configuração pra conseguir consumir os dados de uma planilha,
-então o primeiro passo é criar uma planilha no [google spreadsheets](https://www.google.com/sheets/about/)
-o formato dessa planilha precisa ser **exatamente igual** ao que usamos no MeIndica!
+A partir daqui você vai iniciar a configuração para que consiga consumir os dados de uma planilha,
+então o primeiro passo é criar uma planilha no [Google Sheets](https://www.google.com/sheets/about/),
+o formato desta planilha precisa ser **exatamente igual** ao que usamos no MeIndica!
 incluindo o nome da aba, pra facilitar você pode [baixar este mock](docs/mock.xlsx).
 
-**verifica se o nome da aba na tabela deve estar como: Respostas ao formulário 1**
+**verifique se o nome da aba na tabela está como: Respostas ao formulário 1**
 
 Agora vamos a parte de configurar as chaves de API do Google.
 
