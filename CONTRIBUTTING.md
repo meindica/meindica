@@ -44,7 +44,7 @@ Agora vamos a parte de configurar as chaves de API do Google.
 
 1. Vá até o [console do Google Apis](https://console.developers.google.com/) e clique em `Criar Projeto`.
 2. Informe o nome do projeto e crie.
-3. Com o projeto selecionado vá até credenciais e clieque em `Criar sentenciais` e selecione `Conta de serviço`.
+3. Com o projeto selecionado vá até credenciais e clique em `Criar credenciais` e selecione `Conta de serviço`.
 4. Clique em `adicionar chave` selecione json e baixe o arquivo.
 5. Na sua planilhe vá em `compartilhar` e adicione o client_email informado no arquivo json que você baixou.
 6. Agora no projeto, copie o .env.example para um arquivo .env você pode usar `cp .env.example .env`
