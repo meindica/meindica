@@ -13,13 +13,13 @@ ideias, sugestões ou reportar algum bug, sinta-se bem vindo.
 - Abrindo um pull request.
 
 ### Stack
-A stack desse projeto é toda construida com o ecossistema do React, como framework estamos
+A stack desse projeto é toda construída com o ecossistema do React, como framework estamos
 usando o [Gatsby](https://gatsbyjs.com) e para os componentes e estilos básicos estamos
 usando o [Chakra-ui](https://chakra-ui.com) e é basicamente isso.
 
-Nossa base de dados é construida através de uma planilha do [google spreadsheets](https://www.google.com/sheets/about/).
+Nossa base de dados é construída através de uma planilha do [Google Sheets](https://www.google.com/sheets/about/).
 
-Nossa hospedagem fica no [Netlify](https://www.netlify.com/) e á automáticamente deployada
+Nossa hospedagem fica no [Netlify](https://www.netlify.com/) e automaticamente _deployada_
 através de uma integração com o [Github](https://github.com).
 
 ### Como iniciar o projeto
