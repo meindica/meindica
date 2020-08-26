@@ -46,7 +46,7 @@ Agora vamos a parte de configurar as chaves de API do Google.
 2. Informe o nome do projeto e crie.
 3. Com o projeto selecionado vá até credenciais e clique em `Criar credenciais` e selecione `Conta de serviço`.
 4. Clique em `adicionar chave` selecione json e baixe o arquivo.
-5. Na sua planilhe vá em `compartilhar` e adicione o client_email informado no arquivo json que você baixou.
+5. Na sua planilhe vá em `compartilhar` e adicione o `client_email` informado no arquivo json que você baixou.
 6. Agora no projeto, copie o .env.example para um arquivo .env você pode usar `cp .env.example .env`
 7. Adicione as configurações: `private_key`, `client_email` neste arquivo.
 8. O valor de `SPREADSHEET_ID` pode ser encontrado na url da sua planilha.
