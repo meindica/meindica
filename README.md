@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
   <a href="https://meindica.tech">
@@ -28,6 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ritalino"><img src="https://avatars2.githubusercontent.com/u/30784544?v=4" width="100px;" alt=""/><br /><sub><b>Rita Lino</b></sub></a><br /><a href="https://github.com/meindica/meindica/commits?author=ritalino" title="Code">💻</a> <a href="#ideas-ritalino" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://iamwallace.dev"><img src="https://avatars2.githubusercontent.com/u/6943919?v=4" width="100px;" alt=""/><br /><sub><b>Wallace Batista</b></sub></a><br /><a href="https://github.com/meindica/meindica/commits?author=uselessdev" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/AlmeidaNicolas"><img src="https://avatars1.githubusercontent.com/u/42320790?v=4" width="100px;" alt=""/><br /><sub><b>Nicolas Almeida</b></sub></a><br /><a href="#design-AlmeidaNicolas" title="Design">🎨</a></td>
+    <td align="center"><a href="https://blog.lucasviana.dev"><img src="https://avatars0.githubusercontent.com/u/13911440?v=4" width="100px;" alt=""/><br /><sub><b>Lucas Viana</b></sub></a><br /><a href="https://github.com/meindica/meindica/commits?author=mechamobau" title="Code">💻</a></td>
   </tr>
 </table>
 
