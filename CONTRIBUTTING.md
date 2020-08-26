@@ -42,7 +42,7 @@ incluindo o nome da aba, pra facilitar você pode [baixar este mock](docs/mock.x
 
 Agora vamos a parte de configurar as chaves de API do Google.
 
-1. Vá até o [congole do Google Apis](https://console.developers.google.com/) e clique em `Criar Projeto`.
+1. Vá até o [console do Google Apis](https://console.developers.google.com/) e clique em `Criar Projeto`.
 2. Informe o nome do projeto e crie.
 3. Com o projeto selecionado vá até credenciais e clieque em `Criar sentenciais` e selecione `Conta de serviço`.
 4. Clique em `adicionar chave` selecione json e baixe o arquivo.
