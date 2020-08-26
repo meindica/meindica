@@ -2,7 +2,7 @@
 Oi, antes de tudo gostaríamos de agradecer pelo seu interesse em contribuir para o MeIndica!,
 ficamos bem felizes com você aqui.
 
-Também é importante ressaltar que você não precisa dominar o React pra contribuir, nós
+Também é importante ressaltar que você não precisa dominar o React para contribuir, nós
 estamos aqui para ajudar e aprender juntos, então se você quer contribuir seja com documentação,
 ideias, sugestões reportar algum bug, sinta-se bem vindo.
 
