@@ -29,7 +29,7 @@ fork no seu computador e criar uma nova branch a partir da branch `main`:
 
 ```bash
 git clone git@github.com:<seu usuário>/meindica.git # aqui estamos assumindo que você já configurou o ssh para acessar o github.
-cd meindica
+cd meindica/
 git checkout -b add-sua-funcionalidade
 ```
 
