@@ -1,5 +1,5 @@
 # Guia de contribuição
-Oi, antes de tudo gostariamos de agradecer seu interesse em contribuir para o MeIndica!,
+Oi, antes de tudo gostaríamos de agradecer pelo seu interesse em contribuir para o MeIndica!,
 ficamos bem felizes com você aqui.
 
 Também é importante ressaltar que você não precisa dominar o React pra contribuir, nós
