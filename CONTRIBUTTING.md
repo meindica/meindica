@@ -52,8 +52,7 @@ Agora vamos a parte de configurar as chaves de API do Google.
 8. O valor de `SPREADSHEET_ID` pode ser encontrado na url da sua planilha. Exemplo: `https://docs.google.com/spreadsheets/d/<id-da-sua-planilha>/edit#gid=0`
 9. O valor de WORKSHEET você deve colocar o nome que está como titulo da aba da sua tabela.
 
-Após feito isso você pode iniciar o projeto com: `yarn develop` se tudo correr como esperado
-você poderá acessar a aplicação em http://localhost:8000
+Após feito isso você pode iniciar o projeto com: `yarn develop` se tudo correr como esperado você poderá acessar a aplicação em [http://localhost:8000](http://localhost:8000)
 
 ### Abrindo um pull-request
 
