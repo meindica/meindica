@@ -23,9 +23,9 @@ Nossa hospedagem fica no [Netlify](https://www.netlify.com/) e automaticamente _
 através de uma integração com o [Github](https://github.com).
 
 ### Como iniciar o projeto
-Bem tendo conhecimento da nossa stack vamos ao passo a passo de como iniciar o projeto em si,
-o primeiro passo é você realizar um fork deste repositório, feito isso você pode clonar ser 
-fork no seu computador e a partir branch `main` criar uma nova branch:
+Tendo conhecimento da nossa stack, vamos ao passo a passo de como iniciar o projeto em si,
+o primeiro passo é você realizar um _fork_ deste repositório, após isso você pode clonar este 
+fork no seu computador e criar uma nova branch a partir da branch `main`:
 
 ```bash
 git clone git@github.com:<seu usuário>/meindica.git # aqui estamos assumindo que você já configurou o ssh para acessar o github.
