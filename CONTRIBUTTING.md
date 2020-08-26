@@ -59,4 +59,4 @@ você poderá acessar a aplicação em http://localhost:8000
 
 Ao abrir o pull-request informe o que está sendo feito e se possível faça uma referência para a issue.
 
-Enfim eu acho que é isso.
+Teremos o prazer de ler o seu código e agradecemos pela sua contribuição! :)
