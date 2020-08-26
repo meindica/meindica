@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as JSSearch from 'js-search'
 import { useColorMode, Flex, Stack, IconButton } from '@chakra-ui/core'
@@ -12,12 +12,13 @@ import { Search } from '../components/search'
 import { Banner } from '../components/banner'
 import { Row } from '../components/row'
 import { Title } from '../components/title'
+import SearchTermsSanitizer from '../utils/SearchTermsSanitizer'
 
 function buildIndexes(data) {
   const search = new JSSearch.Search('id')
 
   search.indexStrategy = new JSSearch.PrefixIndexStrategy()
-  search.sanitizer = new JSSearch.LowerCaseSanitizer()
+  search.sanitizer = SearchTermsSanitizer
   search.searchIndex = new JSSearch.TfIdfSearchIndex('id')
 
   search.addIndex('locale')
@@ -79,10 +80,20 @@ const IndexPage = () => {
     }
   }, [criteria]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleCriteriaChange = ({ target }) => setCriteria(target.value)
-  const handleChangeSort = ({ target }) => setSort(() => target.value)
+  const handleCriteriaChange = useCallback(
+    ({ target }) => setCriteria(target.value),
+    []
+  )
 
-  const persons = results.length > 0 ? results : all
+  const handleChangeSort = useCallback(
+    ({ target }) => setSort(() => target.value),
+    []
+  )
+
+  const persons = useMemo(() => (results.length ? results : all), [
+    results,
+    all,
+  ])
 
   return (
     <Layout>
