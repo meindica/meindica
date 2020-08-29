@@ -4,7 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
   <a href="https://meindica.tech">
-    <img alt="Me Indica!" src="https://raw.githubusercontent.com/meindica/meindica/main/src/images/logo.svg" width="200" />
+    <img alt="Me Indica!" src="https://raw.githubusercontent.com/meindica/meindica/main/src/images/logo.inline.svg" width="200" />
   </a>
 </p>
 
@@ -15,6 +15,10 @@
 </p>
 
 MeIndica! is a website where you can find someone to mention for that tech job opportunity a recruiter offered to you but it's not of your interest. Let's give a hand for those who need it! 
+
+## Want to Contribute?
+
+Please read the [contributting guide](CONTRIBUTTING.md)
 
 ## Contributors ✨
 
