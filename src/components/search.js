@@ -35,7 +35,7 @@ export function Search({ onChange, value, sort, onSortChange, ...props }) {
           borderColor: 'pink.200',
         }}
       >
-        <option value="desc" selected>
+        <option value="desc">
           Mais Recentes
         </option>
         <option value="asc">Mais Antigos</option>

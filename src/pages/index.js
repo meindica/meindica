@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import * as JSSearch from 'js-search'
 import { useColorMode, Flex, Stack, IconButton } from '@chakra-ui/core'
 import { transformResults } from '../transformers/results'
+import SearchTermsSanitizer from '../utils/SearchTermsSanitizer'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -12,7 +13,6 @@ import { Search } from '../components/search'
 import { Banner } from '../components/banner'
 import { Row } from '../components/row'
 import { Title } from '../components/title'
-import SearchTermsSanitizer from '../utils/SearchTermsSanitizer'
 
 function buildIndexes(data) {
   const search = new JSSearch.Search('id')
@@ -31,8 +31,8 @@ function buildIndexes(data) {
 }
 
 function sortByDate(order, list) {
-  if (order === 'asc') {
-    return [...list].sort((a, b) => a.date.localeCompare(b.date))
+  if (order === 'desc') {
+    return [...list].reverse()
   }
 
   return list
@@ -41,9 +41,7 @@ function sortByDate(order, list) {
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query fetchPersons {
-      persons: allGoogleSheetRespostasAoFormulario1Row(
-        sort: { fields: carimbodedatahora, order: DESC }
-      ) {
+      persons: allGoogleSheetRespostasAoFormulario1Row {
         edges {
           node {
             id
