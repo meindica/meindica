@@ -1,4 +1,4 @@
-export const transformResults = ({ node }) => ({
+const transformResults = ({ node }) => ({
   id: node.id,
   date: node.carimbodedatahora,
   locale: node.cidadeestadoquevocemora,
@@ -9,3 +9,5 @@ export const transformResults = ({ node }) => ({
   working: /sim/i.test(node.voceestasemempregoatualmente),
   realocate: /sim/i.test(node.considerasemudarcasoavagasejaforadasuacidade),
 })
+
+module.exports = { transformResults }
