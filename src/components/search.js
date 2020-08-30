@@ -5,7 +5,7 @@ export function Search({ onChange, value, sort, onSortChange, ...props }) {
   return (
     <Flex flexDir={['column', 'row']} justifyContent="space-between" {...props}>
       <Input
-        placeholder="Procure por stack, cidade ou senioridade"
+        placeholder="Filtre por stack, cidade ou senioridade"
         borderRadius="10px"
         color="pink.400"
         size="lg"
