@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Box, Text, Stack, Link, Icon, useColorMode } from '@chakra-ui/core'
 
 const TextIcon = ({ icon, children }) => {
@@ -13,7 +13,7 @@ const TextIcon = ({ icon, children }) => {
   )
 }
 
-export function Card({
+function CardItem({
   name,
   locale,
   senority,
@@ -57,3 +57,5 @@ export function Card({
     </Box>
   )
 }
+
+export const Card = memo(CardItem)
