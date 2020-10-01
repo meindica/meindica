@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as JSSearch from 'js-search'
-import { useColorMode, Flex, Stack, IconButton } from '@chakra-ui/core'
+import { useColorMode, Flex, Stack, IconButton, Text } from '@chakra-ui/core'
 import { transformResults } from '../transformers/results'
 import SearchTermsSanitizer from '../utils/SearchTermsSanitizer'
 
@@ -128,6 +128,8 @@ const IndexPage = () => {
             value={criteria}
             sort={sort}
           />
+
+          <Text> Você está visualizando {persons.length} pessoas { criteria && `de ${all.length}`} </Text>
 
           <List>
             {sortByDate(sort, persons).map(person => (
