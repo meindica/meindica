@@ -7,6 +7,7 @@ import SearchTermsSanitizer from '../utils/SearchTermsSanitizer'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { ButtonScroll } from '../components/buttonScroll'
 import { List } from '../components/list'
 import { Card } from '../components/card'
 import { Search } from '../components/search'
@@ -96,6 +97,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO />
+
+      <ButtonScroll>Voltar ao topo</ButtonScroll>
 
       <Banner />
 
