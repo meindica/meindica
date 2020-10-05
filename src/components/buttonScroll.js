@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Button } from './button'
-import { useColorMode } from '@chakra-ui/core'
+import { useColorMode, theme } from '@chakra-ui/core'
 
 export function ButtonScroll({ children, ...props }) {
   const [showScroll, setShowScroll] = useState(false)
@@ -13,12 +13,9 @@ export function ButtonScroll({ children, ...props }) {
   }, [])
 
   const checkScrollTop = useCallback(() => {
-    if (!showScroll && window.pageYOffset > window.innerHeight) {
-      setShowScroll(true)
-    } else if (showScroll && window.pageYOffset <= window.innerHeight) {
-      setShowScroll(false)
-    }
-  }, [showScroll, setShowScroll])
+    const shouldShowButtonScroll = window.pageYOffset > window.innerHeight
+    setShowScroll(shouldShowButtonScroll)
+  }, [setShowScroll])
 
   useEffect(() => {
     window.addEventListener('scroll', checkScrollTop)
@@ -32,7 +29,7 @@ export function ButtonScroll({ children, ...props }) {
       borderColor="blue.100"
       onClick={scrollTop}
       position="fixed"
-      zIndex={1000}
+      zIndex={theme.zIndices.docked}
       cursor="pointer"
       bottom={5}
       right={5}
