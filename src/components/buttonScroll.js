@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Button } from './button'
+import { useColorMode } from '@chakra-ui/core'
 
 export function ButtonScroll({ children, ...props }) {
   const [showScroll, setShowScroll] = useState(false)
+
+  const { colorMode } = useColorMode()
+  const backgroundColor = { light: 'white', dark: '#1A202C' }
 
   const scrollTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -23,6 +27,7 @@ export function ButtonScroll({ children, ...props }) {
 
   return (
     <Button
+      backgroundColor={backgroundColor[colorMode]}
       color="blue.100"
       borderColor="blue.100"
       onClick={scrollTop}
