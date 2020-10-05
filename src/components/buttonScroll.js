@@ -1,22 +1,25 @@
-import React, {  useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Button } from './button'
 
 export function ButtonScroll({ children, ...props }) {
   const [showScroll, setShowScroll] = useState(false)
 
-  const scrollTop = () =>{
-    window.scrollTo({top: 0, behavior: 'smooth'})
-  };
+  const scrollTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
-  const checkScrollTop = () => {
-    if (!showScroll && window.pageYOffset > window.innerHeight){
+  const checkScrollTop = useCallback(() => {
+    if (!showScroll && window.pageYOffset > window.innerHeight) {
       setShowScroll(true)
-    } else if (showScroll && window.pageYOffset <= window.innerHeight){
+    } else if (showScroll && window.pageYOffset <= window.innerHeight) {
       setShowScroll(false)
     }
-  }
+  }, [showScroll, setShowScroll])
 
-  window.addEventListener('scroll', checkScrollTop)
+  useEffect(() => {
+    window.addEventListener('scroll', checkScrollTop)
+    return () => window.removeEventListener('scroll', checkScrollTop)
+  })
 
   return (
     <Button
@@ -29,7 +32,7 @@ export function ButtonScroll({ children, ...props }) {
       bottom={5}
       right={5}
       rightIcon="arrow-up"
-      display= {showScroll ? 'flex' : 'none'}
+      display={showScroll ? 'flex' : 'none'}
       _hover={{
         backgroundColor: 'blue.100',
         color: 'white',
