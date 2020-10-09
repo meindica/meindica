@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react'
-import { useColorMode, Flex, Stack, IconButton, Button } from '@chakra-ui/core'
+import { useColorMode, Flex, Stack, IconButton, Button, Text } from '@chakra-ui/core'
 
 import { STATUS, useLoadMore } from '../hooks/useLoader'
 import { useSearch } from '../hooks/useSearch'
@@ -30,6 +30,8 @@ const IndexPage = ({ pageContext }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { onSearch, results, term } = useSearch({ data })
   const [sort, setSort] = useState(() => 'desc')
+
+  const { totalCount } = pageContext.pageInfo
 
   const handleChangeSort = useCallback(
     ({ target }) => setSort(() => target.value),
@@ -86,6 +88,7 @@ const IndexPage = ({ pageContext }) => {
             sort={sort}
           />
 
+          <Text>Você está visualizando {persons.length} pessoas de {totalCount}</Text>
 
           <List>
             {sortByDate(sort, persons).map(person => (

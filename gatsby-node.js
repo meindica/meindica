@@ -49,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const initialData = {
     nodes: persons.slice(0, 8),
-    pageInfo: { hasNextPage: 1 < pagesCount }
+    pageInfo: { hasNextPage: 1 < pagesCount, totalCount }
   }
 
   createPage({
