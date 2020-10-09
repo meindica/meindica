@@ -12,6 +12,7 @@ import { Search } from '../components/search'
 import { Banner } from '../components/banner'
 import { Row } from '../components/row'
 import { Title } from '../components/title'
+import { ButtonScroll } from '../components/buttonScroll'
 
 function sortByDate(order, list) {
   if (order === 'asc') {
@@ -50,6 +51,8 @@ const IndexPage = ({ pageContext }) => {
   return (
     <Layout>
       <SEO />
+
+      <ButtonScroll>Voltar ao topo</ButtonScroll>
 
       <Banner />
 
