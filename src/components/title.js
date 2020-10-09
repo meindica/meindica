@@ -10,12 +10,10 @@ export function Title({ children, ...props }) {
   return (
     <Text
       as="h2"
-      color="transparent"
-      fontSize={['5xl', '6xl']}
+      fontSize={['4xl', '6xl']}
       fontWeight="bolder"
       lineHeight="1"
-      style={{ WebkitTextStroke: `2px ${color[colorMode]}` }}
-      textShadow={`5px 5px 0 ${color[colorMode]}`}
+      color={color[colorMode]}
       {...props}
     >
       {children}

@@ -67,7 +67,7 @@ export function Banner() {
           </Text>
 
           <Box>
-            <Button as="a" href="#persons" mr={4} mb={4}>
+            <Button as="a" href="#pessoas" mr={4} mb={4}>
               Buscar pessoas
             </Button>
 
