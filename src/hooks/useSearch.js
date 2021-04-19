@@ -1,9 +1,19 @@
 import { useCallback, useEffect, useState } from 'react'
+import path from 'path'
 import * as JSSearch from 'js-search'
 import SearchTermsSanitizer from '../utils/SearchTermsSanitizer'
 
-function buildIndexes(data) {
+const fetchAllData = async () => {
+  const files = path.join('/', `all.json`)
+  const response = await fetch(files)
+  const { nodes } = await response.json()
+
+  return Promise.resolve(nodes)
+}
+
+async function buildIndexes() {
   const search = new JSSearch.Search('id')
+  const data = await fetchAllData()
 
   search.indexStrategy = new JSSearch.PrefixIndexStrategy()
   search.sanitizer = SearchTermsSanitizer
@@ -18,23 +28,38 @@ function buildIndexes(data) {
   return search
 }
 
-export function useSearch({ data }) {
+export function useSearch() {
   const [engine, setEngine] = useState(null)
   const [results, setResults] = useState([])
   const [term, setTerm] = useState('')
 
   useEffect(() => {
-    setEngine(() => buildIndexes(data))
-  }, [data])
+    async function buildSearch() {
+      try {
+        const search = await buildIndexes()
+        setEngine(search)
+      } catch (error) {
+        alert('Ocorreu um erro ao buscar')
+      }
+    }
 
-  const search = useCallback(term => {
+    buildSearch()
+  }, [])
+
+  const search = useCallback(
+    term => {
       setResults(() => engine.search(term))
-  }, [engine])
+    },
+    [engine]
+  )
 
-  const onSearch = useCallback(({ target }) => {
-    setTerm(() => target.value)
-    search(target.value)
-  }, [search])
+  const onSearch = useCallback(
+    ({ target }) => {
+      setTerm(() => target.value)
+      search(target.value)
+    },
+    [search]
+  )
 
   return {
     search,
