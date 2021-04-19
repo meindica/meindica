@@ -1,5 +1,12 @@
 import React, { useState, useMemo, useCallback } from 'react'
-import { useColorMode, Flex, Stack, IconButton, Button, Text } from '@chakra-ui/core'
+import {
+  useColorMode,
+  Flex,
+  Stack,
+  IconButton,
+  Button,
+  Text,
+} from '@chakra-ui/core'
 
 import { STATUS, useLoadMore } from '../hooks/useLoader'
 import { useSearch } from '../hooks/useSearch'
@@ -25,10 +32,10 @@ function sortByDate(order, list) {
 const IndexPage = ({ pageContext }) => {
   const { data, pageInfo, status, loadNextPage } = useLoadMore({
     initialData: pageContext.nodes,
-    initialPageInfo: pageContext.pageInfo
+    initialPageInfo: pageContext.pageInfo,
   })
   const { colorMode, toggleColorMode } = useColorMode()
-  const { onSearch, results, term } = useSearch({ data })
+  const { onSearch, results, term } = useSearch()
   const [sort, setSort] = useState(() => 'desc')
 
   const { totalCount } = pageContext.pageInfo
@@ -38,10 +45,11 @@ const IndexPage = ({ pageContext }) => {
     []
   )
 
-  const persons = useMemo(
-    () => ((term.length > 2) ? results : data),
-    [results, data, term]
-  )
+  const persons = useMemo(() => (term.length > 2 ? results : data), [
+    results,
+    data,
+    term,
+  ])
 
   const isLoading = status === STATUS.loading
   const shouldRenderLoadMoreButton = pageInfo.hasNextPage && term.length < 3
@@ -88,7 +96,9 @@ const IndexPage = ({ pageContext }) => {
             sort={sort}
           />
 
-          <Text>Você está visualizando {persons.length} pessoas de {totalCount}</Text>
+          <Text>
+            Você está visualizando {persons.length} pessoas de {totalCount}
+          </Text>
 
           <List>
             {sortByDate(sort, persons).map(person => (
